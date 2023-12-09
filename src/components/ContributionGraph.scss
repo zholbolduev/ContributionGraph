@@ -1,0 +1,76 @@
+.graph-container {
+  display: grid;
+  grid-template-columns: repeat(51, 14px);
+  grid-template-rows: repeat(7, 14px);
+  gap: 2px;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.contrib-block {
+  position: relative;
+  height: 14px;
+  cursor: pointer;
+  border: 1px solid #e1e4e8;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+
+  &.no-contrib {
+    background-color: #ebedf0;
+  }
+
+  &.low-contrib {
+    background-color: #acd5f2;
+  }
+
+  &.mid-contrib {
+    background-color: #7fa8c9;
+  }
+
+  &.high-contrib {
+    background-color: #527ba0;
+  }
+
+  &.max-contrib {
+    background-color: #254e77;
+  }
+
+  &.selected {
+    border: 2px solid #0366d6;
+  }
+
+  .tooltip {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    display: none;
+    font-size: 12px;
+
+    .contribution-details {
+      margin: 0;
+    }
+  }
+
+  &:hover {
+    .tooltip {
+      display: block;
+    }
+  }
+}
+
+.day-0,
+.day-7,
+.day-14,
+.day-21,
+.day-28,
+.day-35,
+.day-42 {
+  grid-column: span 7;
+}
